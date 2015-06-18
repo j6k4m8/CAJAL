@@ -1,4 +1,4 @@
-function ilasik_getImage(server, token, queryFile, fileOut, useSemaphore)
+function ilastik_getImage(server, token, queryFile, fileOut, useSemaphore)
 % J. Matelsky - adapted from mananno_getImage.m by W. Gray Roncal
 
 if useSemaphore
