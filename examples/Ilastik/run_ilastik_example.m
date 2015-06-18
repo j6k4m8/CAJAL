@@ -1,9 +1,9 @@
 function run_ilastik_example()
-% Ilastik Example (based on WGR's https://github.com/openconnectome/manno/blob/master/code/)
+% Ilastik Examphelle (based on WGR's https://github.com/openconnectome/manno/blob/master/code/)
 % ilastik(headless) starter to demonstrate protocol functionality.  All required inputs
 % are hardcoded for this demo.  Paths are hardcoded for Linux/Mac.
 
-xstart = 5472;
+xstart = 7472;
 xstop = xstart + 512;
 ystart = 8712;
 ystop = ystart + 512;
@@ -14,7 +14,7 @@ resolution = 1;
 
 query = OCPQuery;
 query.setType(eOCPQueryType.imageDense);
-query.setCutoutArgs([xstart, xstop],[ystart,ystop],[zstart,zstop],resolution);
+query.setCutoutArgs([xstart, xstop], [ystart, ystop], [zstart, zstop], resolution);
 
 %% Servers and tokens - alter appropriately
 server = 'openconnecto.me';
@@ -24,10 +24,10 @@ serverUp = 'braingraph1dev.cs.jhu.edu';
 tokenUp = 'temp2';
 
 %% Pull the image to annotate
-ilastik_getImage(server, token, '~/data/queryFileTest', '~/data/testitk.nii', 0)
+ilastik_getImage(server, token, 'queryFileTest', 'testilk.tiff', 0)
 
 % Run the annotations via a headless Ilastik instance
-ilastik_runIlastik('~/ilastik/project.ilp', './tmp/results/testAnnotationResult.tiff', '~/data/*.png')
+%ilastik_runIlastik('~/ilastik/project.ilp', './tmp/results/testAnnotationResult.tiff', '~/data/*.png')
 
 % Push the annotations back
-ilastik_putAnno(serverUp, tokenUp, '~/data/queryFileTest', '~/data/exampleAnno.nii.gz',' RAMONOrganelle', 1, 0)
+%ilastik_putAnno(serverUp, tokenUp, '~/data/queryFileTest', '~/data/exampleAnno.nii.gz',' RAMONOrganelle', 1, 0)

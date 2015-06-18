@@ -14,7 +14,8 @@ oo.setServerLocation(server);
 oo.setImageToken(token);
 oo.setDefaultResolution(query.resolution);
 
+
 im = oo.query(query);
-im = permute(rot90(im.data,2),[2,1,3]);
-nii = make_nii(im);
-save_nii(nii, fileOut);
+for ii = 1:size(im.data,3)
+    imwrite(im.data(:,:,ii), fileOut, 'writemode', 'append');
+end

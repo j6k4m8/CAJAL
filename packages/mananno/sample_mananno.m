@@ -18,7 +18,7 @@ query.setCutoutArgs([xstart, xstop],[ystart,ystop],[zstart,zstop],resolution);
 server = 'openconnecto.me';
 token = 'kasthuri11cc';
 
-serverUp = 'braingraph1dev.cs.jhu.edu'
+serverUp = 'braingraph1dev.cs.jhu.edu';
 tokenUp = 'temp2';
 
 %% Run Mananno
