@@ -1,4 +1,4 @@
-function run_manno_example()
+function run_ilastik_example()
 % Ilastik Example (based on WGR's https://github.com/openconnectome/manno/blob/master/code/)
 % ilastik(headless) starter to demonstrate protocol functionality.  All required inputs
 % are hardcoded for this demo.  Paths are hardcoded for Linux/Mac.
@@ -27,7 +27,7 @@ tokenUp = 'temp2';
 ilastik_getImage(server, token, '~/data/queryFileTest', '~/data/testitk.nii', 0)
 
 % Run the annotations via a headless Ilastik instance
-ilastik_runIlastik('/bin/ilastik/', './tmp/results/testAnnotationResult.tiff', '~/data/*.png')
+ilastik_runIlastik('~/ilastik/project.ilp', './tmp/results/testAnnotationResult.tiff', '~/data/*.png')
 
 % Push the annotations back
 ilastik_putAnno(serverUp, tokenUp, '~/data/queryFileTest', '~/data/exampleAnno.nii.gz',' RAMONOrganelle', 1, 0)
